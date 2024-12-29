@@ -119,6 +119,7 @@ static int px4_usb_probe(struct usb_interface *intf,
 	init_completion(&ctx->quit_completion);
 
 	switch (id->idVendor) {
+	case 0x048d:
 	case 0x0511:
 	{
 		bool px4_use_mldev = false;
@@ -340,7 +341,7 @@ static const struct usb_device_id px4_usb_ids[] = {
 	{ USB_DEVICE(0x0511, USB_PID_PX_W3PE5) },
 	{ USB_DEVICE(0x0511, USB_PID_PX_Q3PE5) },
 	{ USB_DEVICE(0x0511, USB_PID_PX_MLT5U) },
-	{ USB_DEVICE(0x0511, USB_PID_PX_MLT5PE) },
+	{ USB_DEVICE(0x048d, USB_PID_PX_MLT5PE) },
 	{ USB_DEVICE(0x0511, USB_PID_PX_MLT8PE3) },
 	{ USB_DEVICE(0x0511, USB_PID_PX_MLT8PE5) },
 	{ USB_DEVICE(0x0511, USB_PID_DIGIBEST_ISDB2056) },
